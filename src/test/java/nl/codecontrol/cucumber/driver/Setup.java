@@ -1,6 +1,9 @@
 package nl.codecontrol.cucumber.driver;
 
 import cucumber.api.java.Before;
+import cucumber.api.java.BeforeStep;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -9,17 +12,24 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class Setup {
 
     public static WebDriver driver;
+    public static boolean onlyOnce = false;
+
+    @Before
+    public void downloadWebdriver() {
+        if (!onlyOnce) {
+            WebDriverManager.chromedriver().setup();
+            onlyOnce = true;
+        }
+    }
 
     @Before
     public void setWebDriver() {
-
         String browser = System.getProperty("browser");
         if (browser == null) {
             browser = "chrome";
         }
         switch (browser) {
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/chromedriver");
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("start-maximized");
                 driver = new ChromeDriver(chromeOptions);
