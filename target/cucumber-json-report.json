@@ -1,0 +1,6 @@
+Feature: Search
+
+  Scenario: Search for codecontrol                                       [90m# features/Search.feature:4[0m
+    [32mGiven [0m[32mA user navigates to google[0m                                     [90m# StepDefs.aUserNavigatesToGoogle()[0m
+    [32mWhen [0m[32ma user searches for "[0m[32m[1mcodecontrol[0m[32m"[0m                               [90m# StepDefs.aUserSearchesFor(String)[0m
+    [32mThen [0m[32m"[0m[32m[1mCodeControl - Richard Hendricksen[0m[32m" is the first in the results[0m [90m# StepDefs.isTheFirstInTheResults(String)[0m
