@@ -1,8 +1,0 @@
-nl/codecontrol/cucumber/driver/TearDown.class
-nl/codecontrol/cucumber/pageObjects/BasePage.class
-nl/codecontrol/cucumber/driver/Wait.class
-nl/codecontrol/cucumber/driver/Setup.class
-nl/codecontrol/cucumber/stepDefs/StepDefs.class
-nl/codecontrol/cucumber/pageObjects/ResultPage.class
-nl/codecontrol/cucumber/RunCucumberTest.class
-nl/codecontrol/cucumber/pageObjects/SearchPage.class
