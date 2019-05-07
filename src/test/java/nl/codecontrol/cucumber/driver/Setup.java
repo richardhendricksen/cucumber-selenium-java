@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class Setup {
 
     public static WebDriver driver;
-    public static boolean onlyOnce = false;
+    private static boolean onlyOnce = false;
 
     @Before
     public void downloadWebdriver() {
